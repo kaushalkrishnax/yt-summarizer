@@ -25,9 +25,7 @@ function injectSummarizer() {
     iframe.style.overflow = "hidden";
 
     descriptionElement.insertAdjacentElement("beforebegin", iframe);
-    iframe.addEventListener("load", () => {
-      sendVideoIdToIframe();
-    });
+    iframe.addEventListener("load", sendVideoIdToIframe);
   }
 }
 
@@ -35,3 +33,16 @@ const observer = new MutationObserver(injectSummarizer);
 observer.observe(document.body, { childList: true, subtree: true });
 
 injectSummarizer();
+
+let lastVideoId = new URLSearchParams(window.location.search).get("v");
+
+function checkVideoChange() {
+  const currentVideoId = new URLSearchParams(window.location.search).get("v");
+  if (currentVideoId && currentVideoId !== lastVideoId) {
+    lastVideoId = currentVideoId;
+    sendVideoIdToIframe();
+  }
+}
+
+window.addEventListener("yt-navigate-finish", checkVideoChange);
+window.addEventListener("popstate", checkVideoChange);

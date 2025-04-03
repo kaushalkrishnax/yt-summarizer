@@ -21,6 +21,9 @@ const CONFIG = {
 window.addEventListener("message", (event) => {
   if (event.data.action === "videoId") {
     CONFIG.VIDEO_ID = event.data.videoId;
+    els.realContent.innerHTML = "";
+    els.summaryContent.classList.remove("loaded", "expanded");
+    chrome.runtime.sendMessage({ action: "close" });
   }
 });
 
