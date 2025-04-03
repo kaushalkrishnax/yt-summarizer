@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Summarizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="summarizer-container">
+    <div class="summarizer-header">
+      <div class="extension-name">
+        <img
+          src="data:image/png;base64,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"
+          class="extension-icon" alt="Extension Icon">
+        YouTube Summarizer
+      </div>
+      <button class="btn-summarize">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        Summarize
+      </button>
+    </div>
+    <div class="summary-content">
+      <div class="progress-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <!-- Skeleton loading UI -->
+      <div class="skeleton-loading">
+        <div class="basic-title">Summary</div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-text"></div>
+
+        <div class="basic-title">Key Moments</div>
+        <div class="key-moments-list">
+          <div class="skeleton-moment">
+            <div class="skeleton-timestamp"></div>
+            <div class="skeleton-description"></div>
+          </div>
+          <div class="skeleton-moment">
+            <div class="skeleton-timestamp"></div>
+            <div class="skeleton-description"></div>
+          </div>
+          <div class="skeleton-moment">
+            <div class="skeleton-timestamp"></div>
+            <div class="skeleton-description"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="real-content"></div>
+    </div>
+  </div>
+  <script unsafe-inline src="script.js"></script>
+</body>
+
+</html>
