@@ -134,7 +134,6 @@ function parseAndDisplaySummary(responseText) {
     const summaryText = document.createElement("div");
     summaryText.className = "summary-text";
     summaryText.innerHTML = mainSummary
-      .replace(/\n/g, "<br>")
       .replace(/\*\*Summary:\*\*/g, "")
       .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
 
@@ -214,7 +213,7 @@ async function generateSummary() {
       **Summary:** (Max 15 sentences) – Cover key points concisely.
         - Not more than 120 words.
         - Use **bold** for important points.
-      **Key Moments:** (10-15 timestamps) – Format as MM:SS → Brief description.
+      **Key Moments:** (10-15 timestamps) – Format as MM:SS → Brief to medium description of the exact moment.
         - Sort timestamps in ascending order.
         - Include hours if needed (HH:MM:SS)
         - Only include important moments.`;
